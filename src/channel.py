@@ -25,7 +25,8 @@ class Channel:
         self.views = views
 
     @classmethod
-    def get_service(cls, channel_id):
+    def get_service(cls):
+        channel_id = 'UCt_Sgcd_wTB8qiGym1lkgGg'
         request = youtube.channels().list(
             part='snippet',
             id=channel_id
