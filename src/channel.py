@@ -14,7 +14,8 @@ class Channel:
 
     def __init__(self, channel_id: str) -> None:
         """Экземпляр инициализируется id канала. Дальше все данные будут подтягиваться по API."""
-        youtube = build('youtube', 'v3', developerKey=Channel.__api_key)
+        youtube = Channel.get_service()
+        # youtube = build('youtube', 'v3', developerKey=Channel.__api_key)
         request = youtube.channels().list(
             part='snippet,statistics',
             id=channel_id
