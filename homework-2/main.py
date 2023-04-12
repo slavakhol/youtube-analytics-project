@@ -1,8 +1,8 @@
 from src.channel import Channel
 
 if __name__ == '__main__':
-    # mpt = Channel('UCt_Sgcd_wTB8qiGym1lkgGg')
-    mpt = Channel.get_service()
+    mpt = Channel('UCt_Sgcd_wTB8qiGym1lkgGg')
+
     # получаем значения атрибутов
     print(mpt.title)  #
     print(mpt.video)  #
