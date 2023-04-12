@@ -51,3 +51,25 @@ class Channel:
         """Выводит в консоль информацию о канале."""
         # channel = youtube.channels().list(id=self.channel_id, part='snippet,statistics').execute()
         printj(self.response)
+    def __str__(self):
+        return f"{self.title} ({self.url})"
+    def __add__(self, other):
+        return int(self.subscribers) + int(other.subscribers)
+
+    def __sub__(self, other):
+        return int(self.subscribers) - int(other.subscribers)
+
+    def __gt__(self, other):
+        return int(self.subscribers) > int(other.subscribers)
+
+    def __ge__(self, other):
+        return int(self.subscribers) >= int(other.subscribers)
+
+    def __lt__(self, other):
+        return int(self.subscribers) < int(other.subscribers)
+
+    def __le__(self, other):
+        return int(self.subscribers) <= int(other.subscribers)
+
+    def __eq__(self, other):
+        return int(self.subscribers) == int(other.subscribers)
